@@ -1,0 +1,157 @@
+<header id="header">
+      <div class="container">
+
+      <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Dashboard <small>MyCoach2U</small></h1>
+
+    </div><!-- /.container -->
+    </header>
+    <div id="main">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3">
+          
+            <div class="list-group">
+            <a href="#" class="list-group-item active bg-color-theme">
+            Dashboard
+            </a>
+            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>My Coach<span class="badge">5</span></a>
+            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>My Client<span class="badge">32</span></a>
+            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>My Gym<span class="badge">16</span></a>
+            </div>
+            
+          
+            <div class="well">
+            <h4>Disk space used</h4>
+              <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+              40%
+              </div>
+              </div>
+              <h4>Memory used</h4>
+              <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              60%
+              </div>
+              </div>
+            </div>
+            </div>
+          
+      <div class="col-md-9">
+        
+        
+        <div class="panel panel-default">
+        <div class="panel-heading bg-color-theme">
+        <h3 class="panel-title">Quick Overview</h3>
+        </div>
+        <div class="panel-body text-center">
+        <div class="row">
+        <div class="col-md-3">
+        <div class="well">
+        <h2><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 100</h2>
+         Gyms 
+
+        </div>
+        </div>
+        <div class="col-md-3">
+         <div class="well">
+         <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> 5000</h2>
+         Revenue 
+        </div>
+
+        </div>
+        <div class="col-md-3">
+         <div class="well">
+         <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 52</h2>
+         Online 
+        </div>
+
+        </div>
+        <div class="col-md-3">
+         <div class="well">
+         <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>13224</h2>
+         Monthly users 
+
+        </div>
+        </div>
+        </div>
+        </div>
+      
+       
+        <div class="panel panel-default">
+        <div class="panel-heading bg-color-theme">
+        <h3 class="panel-title">Latest Booking</h3>
+        </div>
+        <div class="panel-body">
+        <table class="table table-condensed table-bordered table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Joined</th>
+    </tr>
+    <tr *ngFor="let coach of coaches" (click)="goToCoachDetails(coach._id)">
+      <td>{{coach.name}}</td>
+      <td>{{coach.description}}</td>
+      <td>{{coach.picURL}}</td>
+    </tr>
+   
+
+  </table>
+      
+        </div>
+        </div>
+      </div>
+      </div>
+</div>
+</div>
+<footer id="footer">
+&copy; Copyright 2017 - Wanmuz 
+</footer>
+<!--- All my Modals -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add new Coach</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Coach Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Coach Email</label>
+    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Short Description</label>
+    <textarea type="Text" class="form-control" id="exampleInputDesc1" name="editor1" placeholder="Short Description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Image</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Jpg or Png File only</p>
+  </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" (click)="addCoach()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+     <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

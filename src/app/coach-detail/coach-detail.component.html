@@ -1,0 +1,19 @@
+<p>
+  coach-detail works! {{id}}
+</p>
+
+<p>{{coach.description}}</p>
+ <table class="table table-condensed table-bordered table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Joined</th>
+    </tr>
+    <tr *ngFor="let coach of coach.sessions">
+      <td>{{coach.place}}</td>
+      <td>{{coach.startdate}}</td>
+      <td>{{coach.enddate}}</td>
+    </tr>
+   
+
+  </table>
